@@ -1,0 +1,729 @@
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		
+<meta name="SiteName" content="全国网络安全标准化技术委员会"/>
+<meta name="SiteDomain" content=""/>
+<meta name="SiteIDCode" content=""/>
+
+<meta name="others" content="页面生成时间 2026-10-16 16:43:19" />
+<title>
+			全国网络安全标准化技术委员会
+		</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport"
+			content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="/tc260-webapp/febs/css/febs.css"/>
+		<link rel="stylesheet" href="/tc260-webapp/layui/css/layui.css"/>
+		<link rel="stylesheet" href="/tc260-webapp/layui/css/layer.css" />
+		<link rel="stylesheet" href="/tc260/xhtml/css/layui1.css" media="all">
+		<link rel="stylesheet" href="/tc260/xhtml/css/common1.css" media="all">
+		<link rel="stylesheet" href="/tc260/xhtml/css/style1.css" media="all">
+		<!-- 依 赖 脚 本 -->
+		<script src="/tc260/xhtml/layui/layui.js" type="text/javascript"></script>
+		<script src="/tc260/xhtml/js/jquery.min.js"></script>
+		<script src="/tc260/xhtml/js/echarts.min.js"></script>
+		<style>
+			.iyunwen_js_class {
+				width: 100px !important;
+				top: 540px !important;
+			}
+
+			.title1 a {
+				color: #fff;
+			}
+
+			.c-title span i {
+				display: inline-block;
+				width: 8px;
+				height: 8px;
+				background: #3d55a7;
+				border-radius: 50%;
+				margin-right: 6px;
+			}
+
+			.news .layui-tab-item .item .cont .c-title a {
+				display: contents;
+				justify-content: space-between;
+			}
+
+			.inZjwy {
+				padding: 20px 0 30px;
+			}
+
+			.inZjwy img {
+				width: 100%;
+			}
+
+			@media screen and (max-width:750px) {
+				.inZjwy {
+					padding: 20px 3% 30px;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div>
+    <!-- top搜索 -->
+    <div class="top">
+        <div class="top-header">
+            <div class="logo">
+                <a href="/tc260/index.shtml"><img src="/tc260/xhtml/images/new/logo.png" /></a>
+            </div>
+            <div class="search">
+					<form name="searchFrom" class="searchForm" action="/tc260/search/search.shtml" method="get" onsubmit="return advsearch()">
+									
+                  <input id="searchword" name="keyword" type="text" autocomplete="off" lay-affix="search" placeholder="请输入您要搜索的内容" class="layui-input search-text">
+                <button type="button" class="layui-btn layui-btn-primary" onclick="javascript:document.searchFrom.submit();">
+                   <img src="/tc260/xhtml/images/new/ssico.png" />
+                </button>
+				</form>
+              <a href="/tc260/cydwsq/cydwsq.shtml" class="link sqcydw"><img src="/tc260/xhtml/images/new/cysqico.png" />申请成员单位</a>
+              <span class="line">|</span>
+                <a href="/tc260-webapp/login" class="link" target="_blank">登录</a>
+            </div>
+        </div>
+    </div>
+    <!-- 导航 -->
+    <div class="layui-bg-064eaf">
+        <ul class="nav">
+            <li class="layui-nav-item"><a href="/tc260/index.shtml">首页</a></li>
+            <li class="layui-nav-item"><a href="/tc260/xwdt1/list.shtml">新闻动态</a></li>
+            <li class="layui-nav-item"><a href="/tc260/hygd1/list.shtml">行业观点</a></li>
+            <li class="layui-nav-item"><a href="/tc260/bzzqyj/yjzj_list.shtml">标准征求意见</a></li>
+
+            <li class="layui-nav-item"><a href="/tc260/sjzn/list.shtml">出版物</a></li>
+            <li class="layui-nav-item"><a href="/tc260/ldsz/list_cont.shtml">关于我们</a></li>
+
+        </ul>
+
+<style>
+
+</style>
+    </div>
+
+</div>
+<script>
+	function advsearch() {
+		var sSearchWord = document.getElementById("searchword").value;
+		var sSearchWordNew = "";
+		sSearchWord = sSearchWord.replace(/(^\s*)|(\s*$)/g, "");
+		if (sSearchWord == '' || sSearchWord == '请输入您要搜索的内容') {
+			alert('关键字不能为空！');
+			return false;
+		} else {
+			var sSearchWords = sSearchWord.split(" ");
+			if (sSearchWords.length > 1) {
+				for (var i = 0; i < sSearchWords.length; i++) {
+					sWord = sSearchWords[i];
+					if (sWord != "") {
+						if (sSearchWordNew != "") {
+							sSearchWordNew += " " + sWord;
+						} else {
+							sSearchWordNew = sWord;
+						}
+					}
+				}
+				document.getElementById("searchword").value = sSearchWordNew;
+			}
+		}
+	}
+</script>
+<script language="javascript" type="text/javascript">
+	$(document).ready(function() {
+		// 获取当前栏目名称
+		var columnName = $('.dqlmName').text().trim();
+		
+		// 如果栏目名称为空或不存在，默认高亮首页
+		if (!columnName) {
+			$('.nav li:first-child').addClass('layui-current');
+			return;
+		}
+		
+		// 遍历顶部导航菜单
+		var matched = false;
+		$('.nav .layui-nav-item').each(function() {
+			var linkText = $(this).find('a').text().trim();
+			// 如果菜单文字与栏目名称匹配
+			if (linkText === columnName) {
+				$(this).addClass('layui-current');
+				matched = true;
+			} else {
+				$(this).removeClass('layui-current');
+			}
+		});
+		
+		// 如果没有匹配到，高亮首页
+		if (!matched) {
+			$('.nav li:first-child').addClass('layui-current');
+		}
+	});
+</script>
+<!-- 内容 -->
+		<!-- 内容 -->
+		<div class="main inMain">
+			<div class="inBanner">
+				<!-- banner -->
+				<div class="banner-wrap">
+					<div class="right-info">
+						<div class="title">— 领导设置 —</div>
+						<div class="item">
+							<div class="sm-title">主任委员</div>
+							<ul>
+								 
+
+									<li>
+										王京涛
+
+									</li>
+
+
+							</ul>
+						</div>
+						<div class="item">
+							<div class="sm-title">副主任委员</div>
+							<ul>
+								 
+
+									<li>
+										高　林
+
+									</li>
+
+									<li>
+										刘伯超
+
+									</li>
+
+									<li>
+										李　彤
+
+									</li>
+
+									<li>
+										温　哲
+
+									</li>
+
+									<li>
+										李春晓
+
+									</li>
+
+
+							</ul>
+						</div>
+						<div class="item">
+							<div class="sm-title">秘书长</div>
+							<ul>
+								 
+
+									<li>
+										杨旭东
+
+									</li>
+
+
+							</ul>
+						</div>
+						<div class="item">
+							<div class="sm-title">副秘书长</div>
+							<ul>
+
+								 
+
+									<li>
+										胡　影
+
+									</li>
+
+									<li>
+										曲天光
+
+									</li>
+
+									<li>
+										姜　伟
+
+									</li>
+
+							</ul>
+						</div>
+					</div>
+					<div class="left-banner">
+						<div class="layui-carousel" id="js_banner">
+							<div carousel-item>
+								 
+									<div class="item">
+										<a href="/tc260/xwdt1/202609/82b38e25c8904dcf906450f99f489759.shtml" target="_blank">
+<img
+													src='/tc260/tpxw/202609/82b38e25c8904dcf906450f99f489759/images/9135e6238d244ee1af8f36632c8348b8.jpg' />
+										</a>
+										<p class="title title1">
+											<a href="/tc260/xwdt1/202609/82b38e25c8904dcf906450f99f489759.shtml" target="_blank" title='全国网络安全标准化技术委员会2026年第二次“标准周”活动圆满收官'  >全国网络安全标准化技术委员会2026年第二次“标准周”活动圆满收官</a>
+										</p>
+									</div>
+									<div class="item">
+										<a href="/tc260/xwdt1/202604/03df3b74b6ea4e1d8b2a40e2364b030e.shtml" target="_blank">
+<img
+													src='/tc260/tpxw/202604/03df3b74b6ea4e1d8b2a40e2364b030e/images/2f62e285252f4177873cdeb4468ebced.jpg' />
+										</a>
+										<p class="title title1">
+											<a href="/tc260/xwdt1/202604/03df3b74b6ea4e1d8b2a40e2364b030e.shtml" target="_blank" title='全国网络安全标准化技术委员会2026年第一次全体委员会议在珠海召开'  >全国网络安全标准化技术委员会2026年第一次全体委员会议在珠海召开</a>
+										</p>
+									</div>
+									<div class="item">
+										<a href="/tc260/xwdt1/202504/06f1f18511474d2885d622b05616f2dc.shtml" target="_blank">
+<img
+													src='/tc260/tpxw/202504/06f1f18511474d2885d622b05616f2dc/images/6cb4cd5124f64bc186fd49ba5d1f8210.jpg' />
+										</a>
+										<p class="title title1">
+											<a href="/tc260/xwdt1/202504/06f1f18511474d2885d622b05616f2dc.shtml" target="_blank" title='全国网络安全标准化技术委员会2025年第一次全体委员会议在苏州召开'  >全国网络安全标准化技术委员会2025年第一次全体委员会议在苏州召开</a>
+										</p>
+									</div>
+									<div class="item">
+										<a href="/tc260/xwdt1/202404/83debc7e404846c9b3d7fd3236016a8e.shtml" target="_blank">
+<img
+													src='/tc260/tpxw/202404/83debc7e404846c9b3d7fd3236016a8e/images/1c2e2cdc5547488cbbe9ba73c5743392.png' />
+										</a>
+										<p class="title title1">
+											<a href="/tc260/xwdt1/202404/83debc7e404846c9b3d7fd3236016a8e.shtml" target="_blank" title='全国网络安全标准化技术委员会2024年第一次全体会议在京召开'  >全国网络安全标准化技术委员会2024年第一次全体会议在京召开</a>
+										</p>
+									</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="inZtzl">
+				<div class="content">
+					<!-- 专题专栏 -->
+					<!-- <div class="inTitle">
+						<a href="/tc260/ztzl/tllist.shtml"  target="_parent">专题专栏</a>
+						<a href="/tc260/ztzl/tllist.shtml" target="_parent"
+							class="more">查看更多></a>
+					</div> -->
+					<div class="con">
+						 
+							<dl>
+								<dt><a href="/tc260/zjwy/zjwy.shtml" target="_blank"
+										title="委员征集">
+<img
+												src="/tc260/ztzl/202608/ad9c5a5f9c5845c58b8a938c62ec8f23/images/0a8c84addd7c4e85b280ba9a36cd3ce5.png" />
+									</a></dt>
+								<dd><a href="/tc260/zjwy/zjwy.shtml" target="_blank"
+										title="委员征集">
+										委员征集
+									</a></dd>
+							</dl>
+
+						
+					</div>
+				</div>
+			</div>
+			<div class="inNews">
+				<!-- 新闻动态/通知公告 -->
+				<div class="content news">
+					<div class="left">
+						<div class="inTitle">
+							<a href="/tc260/xwdt1/list.shtml"  target="_parent">新闻动态</a>
+							<a href="/tc260/xwdt1/list.shtml" target="_parent"
+								class="more">查看更多></a>
+						</div>
+						<ul class="inList">
+							 
+
+								<li><a href="/tc260/xwdt1/202610/dbeba5a592254e96847df0fb00653d61.shtml" target="_blank"
+										title="2026年下半年ISO/IEC JTC1/SC27工作组会议和全体会议召开"><span
+											class="date">
+											2026-10-16
+										</span>
+										2026年下半年ISO/IEC JTC1/SC27工作组会议和全体会议召开
+									</a></li>
+
+								<li><a href="/tc260/xwdt1/202609/2888b69a99c6461588e4c9eda6a4b0af.shtml" target="_blank"
+										title="《网络安全标准化工作月报》2026年8-9月"><span
+											class="date">
+											2026-09-22
+										</span>
+										《网络安全标准化工作月报》2026年8-9月
+									</a></li>
+
+								<li><a href="/tc260/xwdt1/202609/82b38e25c8904dcf906450f99f489759.shtml" target="_blank"
+										title="全国网络安全标准化技术委员会2026年第二次“标准周”活动圆满收官"><span
+											class="date">
+											2026-09-21
+										</span>
+										全国网络安全标准化技术委员会2026年第二次“标准周”活动圆满收官
+									</a></li>
+
+						</ul>
+					</div>
+					<div class="right">
+						<div class="inTitle">
+							<a href="/tc260/tzgg/list.shtml"  target="_parent">通知公告</a>
+							<a href="/tc260/tzgg/list.shtml" target="_parent"
+								class="more">查看更多></a>
+						</div>
+						<ul class="inList">
+							 
+
+								<li><a href="/tc260/tzgg/202610/2ac025d624a046199d8895fd6eeee5aa.shtml" target="_blank"
+										title="关于下达25项网络安全推荐性国家标准计划的通知"><span
+											class="date">
+											2026-10-13
+										</span>
+										关于下达25项网络安全推荐性国家标准计划的通知
+									</a></li>
+
+								<li><a href="/tc260/tzgg/202609/e5b82ae7aca244d19d36b39575cbb458.shtml" target="_blank"
+										title="关于对《网络安全标准实践指南——智能体系统开发安全指南（征求意见稿）》公开征求意见的通知"><span
+											class="date">
+											2026-09-18
+										</span>
+										关于对《网络安全标准实践指南——智能体系统开发安全指南（征求意见稿）》公开征求意见的通知
+									</a></li>
+
+								<li><a href="/tc260/tzgg/202609/4a537d5ca4d548ec9e2a000bad2e895d.shtml" target="_blank"
+										title="关于发布《网络安全标准实践指南——座舱数据处理安全要求》的通知"><span
+											class="date">
+											2026-09-15
+										</span>
+										关于发布《网络安全标准实践指南——座舱数据处理安全要求》的通知
+									</a></li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="inEpie">
+				<div class="content">
+					<div class="l">
+						<div class="inTitle">
+							<a>已发布/在研标准数量</a>
+							<a href="/tc260/yfbzybzsl/yfbzybzsl.shtml" target="_parent"
+								class="more">查看详情></a>
+						</div>
+						<div id="pieLeft"></div>
+					</div>
+					<div class="r">
+						<div class="inTitle">
+							<a>工作组已发布标准数量</a>
+							<a href="/tc260/gzzyfbbzsl/gzzyfbbzsl.shtml" target="_parent"
+								class="more">查看详情></a>
+						</div>
+						<div id="pieRight"></div>
+					</div>
+				</div>
+				<script>
+					// ========== 图表1：标准数量 ==========
+					const chart1 = echarts.init(document.getElementById('pieLeft'));
+					chart1.setOption({
+						title: {
+							text: '',
+							left: 'center',
+							textStyle: {
+								fontSize: 16
+							}
+						},
+						tooltip: {
+							trigger: 'item'
+						},
+						legend: false,
+						series: [{
+							label: {
+								
+								fontSize: 15,
+								formatter: '{b}{c}项',
+							},
+							type: 'pie',
+							radius: '65%',
+							color: ['#3b8cff', '#ffb347'],
+							data: [{
+									value: 434,
+									name: '已发布'
+								},
+								{
+									value: 135,
+									name: '在研'
+								}
+							],
+							emphasis: {
+								itemStyle: {
+									shadowBlur: 10,
+									shadowOffsetX: 0,
+									shadowColor: 'rgba(0, 0, 0, 0.5)'
+								}
+							}
+						}]
+					});
+
+					// ========== 图表2：工作组已发布标准数量 ==========
+					const chart2 = echarts.init(document.getElementById('pieRight'));
+					chart2.setOption({
+						title: {
+							text: '',
+							left: 'center',
+							textStyle: {
+								fontSize: 16
+							}
+						},
+						tooltip: {},
+						legend: false,
+						series: [{
+							type: 'pie',
+							radius: ['30%', '65%'],
+							label: {
+								fontSize: 15,
+								formatter: '{b}\n{c}项',
+							},
+							// color: ['#36a2eb', '#ff6384', '#ffce56', '#4bc0c0'],
+							data: [
+								{
+									value: 124,
+									name: '网络安全评估标准工作组'
+								},
+								{
+									value: 89,
+									name: '网络安全管理标准工作组'
+								},
+								{
+									value: 78,
+									name: '鉴别与授权标准工作组'
+								},
+								{
+									value: 50,
+									name: '密码技术标准工作组'
+								},
+								{
+									value: 33,
+									name: '通信安全标准工作组'
+								},
+								{
+									value: 33,
+									name: '数据安全标准工作组'
+								},
+								{
+									value: 24,
+									name: '新技术安全标准特别工作组'
+								},
+								{
+									value: 3,
+									name: '强制性国家标准'
+								}
+							],
+							emphasis: {
+								itemStyle: {
+									shadowBlur: 10,
+									shadowOffsetX: 0,
+									shadowColor: 'rgba(0, 0, 0, 0.5)'
+								}
+							}
+						}]
+					});
+
+					// 窗口大小变化时自适应
+					window.addEventListener('resize', () => {
+						chart1.resize();
+						chart2.resize();
+					});
+				</script>
+			</div>
+			<!-- 标准征求意见 -->
+			<div class="meet-info">
+				<div class="content layui-tab layui-tab-brief posr">
+					<div class="inTitle">
+						<a href="/tc260/bzzqyj/yjzj_list.shtml"  target="_parent">标准征求意见</a>
+						<a href="/tc260/bzzqyj/yjzj_list.shtml" target="_parent"
+							class="more">查看更多></a>
+					</div>
+					<div class="layui-tab-content">
+						<div class="layui-tab-item layui-show">
+							<ul class="layui-tab-date" id="statusTab">
+								<li class="active" data-status="1">进行中</li>
+								<!--<li data-status="2">已结束</li>-->
+							</ul>
+							<div class="info-item-wrap" id="bzzqyj">
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 标准征求意见 -->
+			</div>
+			<!-- <div class="inZjwy"><div class="content"><a href="/tc260/zjwy/zjwy.shtml"><img src="/tc260/xhtml/images/new/inzjwy.png" /></a></div></div> -->
+
+			
+			<div class="inYqlj">
+				<!-- 友情链接 -->
+				<div class="content links">
+					<div class="inTitle">
+						<a>
+							友情链接
+						</a>
+					</div>
+					<ul>
+						 
+							<li><a href="https://www.sac.gov.cn/" target="_blank"
+									title="国家标准化管理委员会">
+<img
+											src="/tc260/yqlj/202608/28b42e426fd844a487dfc65be25910c6/images/0383e1d706cd4098aad6edc6bc8b4565.png" />
+								</a></li>
+							<li><a href="https://www.miit.gov.cn/" target="_blank"
+									title="中华人民共和国工业和信息化部">
+<img
+											src="/tc260/yqlj/202608/0d93e5ab9c994e88a8c177cb5d544c8b/images/a2cfb39f15f048d39881777a1fef0b2b.png" />
+								</a></li>
+							<li><a href="https://www.cac.gov.cn/" target="_blank"
+									title="中央网络安全和信息化委员会办公室">
+<img
+											src="/tc260/yqlj/202608/8a32aa7ef5e546698f66e38dd60ace7d/images/1fcc979bda484422bba0f8578b21a54f.png" />
+								</a></li>
+							<li><a href="https://www.cesi.cn/" target="_blank"
+									title="中国电子技术标准化研究院">
+<img
+											src="/tc260/yqlj/202608/1d08c7fb51c7477f84e80683235c01bc/images/544f51923bea4e83a86ae8599b045f70.png" />
+								</a></li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- Bottom -->
+		<div>
+			<!-- 底部 -->
+			<!-- <div style="height:30px;"></div> -->
+			<!-- Bottom -->
+			<div>
+    <!-- 底部 -->
+    <div class="footer">
+        <div class="contact">
+          <p>全国网络安全标准化技术委员会秘书处 版权所有 ©2009-2026</p>
+          <p>地址：中国 北京 安定门东大街一号  中国电子技术标准化研究院</p>
+          <p>联系电话：010-64102730,64102731  传真：010-64102997  邮编：100007</p>
+            <p><a href="https://beian.miit.gov.cn/" target="_blank" style="color: #fff">京ICP备05013730号-14</a></p>
+                <p><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010102004561" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;color: #fff">
+                        <img src="/tc260/xhtml/images/beian.png" style="float:left;">京公网安备11010102004561号
+                    </a>
+                </p>
+        </div>
+    </div>
+
+</div>
+			
+			<script id="opinionList_tpl" type="text/html">
+			{{#
+  var opinion = d.opinions;
+  }}
+				<div class="info-item">
+					<i class="icon"></i>
+					<div class="info">
+						<div class="title"> <a href="/tc260/bzzqyj/bzkdetail.shtml?id={{opinion.projectId}}&type=gjbzjh"
+								target="_blank"> {{opinion.title}}</a></div>
+						<!-- <div class="address other">联系人 {{opinion.name}}</div> -->
+						<div class="date other">开始时间：{{layui.util.toDateString(opinion.sTime, "yyyy-MM-dd")}}</div>
+						<div class="date other">结束时间：{{layui.util.toDateString(opinion.eTime, "yyyy-MM-dd")}}</div>
+					</div>
+				</div>
+			</script>
+
+			<script data-th-inline="javascript">
+				var ctx = '/tc260-webapp/';
+				var currentUser = {
+					isTab: '1'
+				};
+				layui.config({
+					base: ctx + '/febs/',
+					debug: false
+				}).extend({
+					febs: 'lay/modules/febs',
+					validate: 'lay/modules/validate',
+					formSelects: 'lay/extends/formSelects-v4.min',
+				}).use(['jquery', 'febs', 'form', 'layer', 'formSelects', 'validate', 'laytpl', 'laydate', 'element'],
+					function() {
+						var $ = layui.jquery,
+							febs = layui.febs,
+							formSelects = layui.formSelects,
+							form = layui.form,
+							layer = layui.layer,
+							element = layui.element,
+							laytpl = layui.laytpl,
+							laydate = layui.laydate,
+							validate = layui.validate;
+						var carousel = layui.carousel;
+						
+						carousel.render({
+							elem: '#js_banner',
+							width: 'auto',
+							arrow: 'none',
+							autoplay: true,
+							height: '480px'
+						});
+						carousel.render({
+							elem: '#meeting-image',
+							width: '100%',
+							height: '420px',
+							interval: 3000
+						});
+						element.on('tab(tab1)', function(data) {
+							if (data.index == 0) {
+								$('#href1').attr('href', "/tc260/xwdt1/list.shtml")
+							} else {
+								// $('#href1').attr('href','/portal/cms/work/1/2')
+								$('#href1').attr('href', "/tc260/tzgg/list.shtml")
+
+							}
+						});
+
+						// ========== 改动开始：标准征求意见状态切换 ==========
+						// 1. 定义加载函数，增加 status 参数
+						function loadOpinions(status) {
+							var param = {
+								'pageNum': 1,
+								'pageSize': 4,
+								'status': status // 1-进行中，2-已结束
+							};
+							var bzzqyj = document.getElementById('bzzqyj');
+							bzzqyj.innerHTML = ''; // 清空
+							febs.get(ctx + 'api/projectOpinion/list', param, function(res) {
+								var opinions = res.data.rows;
+								var result_html = document.getElementById('opinionList_tpl').innerHTML;
+								$.each(opinions, function(index, item) {
+									var data = {
+										'opinions': item
+									};
+									laytpl(result_html).render(data, function(html) {
+										bzzqyj.insertAdjacentHTML('beforeend', html);
+									});
+								});
+							});
+						}
+
+						// 2. 给标签绑定点击事件
+						$('#statusTab li').on('click', function() {
+							$('#statusTab li').removeClass('active');
+							$(this).addClass('active');
+							var status = $(this).data('status');
+							loadOpinions(status);
+						});
+
+						// 3. 默认加载进行中（status=1）
+						loadOpinions(1);
+						// ========== 改动结束 ==========
+						
+						
+					})
+
+				function todoUpdate() {
+					console.log("点击更新！");
+					Mapp.showMessage("功能正在更新，待上线!");
+				}
+			</script>
+			
+		<!-- PHPStat Start -->
+		<!--webbot bot="AdvClassList" mode="0" nodeid="0" type="-5" attr="" classstring="&lt;script language=#enpquot#javascript#enpquot#&gt;var __$nodeid=&lt;NodeId&gt;NodeIdPh&lt;/NodeId&gt;;&lt;/script&gt;" TAG="BODY" PREVIEW="[高级栏目列表]" isshowcode="0" startspan --><!--webbot bot="AdvClassList" endspan i-checksum="0" --><script language="JavaScript" charset="utf-8" src="//yifenxi.ejectu.com/phpstat/count/10000095/10000095.js" ></script>
+		<!-- /PHPStat End -->	
+	</body>
+</html>

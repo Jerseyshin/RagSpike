@@ -1,0 +1,289 @@
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		
+<meta name="SiteName" content="全国网络安全标准化技术委员会"/>
+<meta name="SiteDomain" content=""/>
+<meta name="SiteIDCode" content=""/>
+<meta name="ColumnName" content="网络安全标准实践指南" />
+<meta name="ColumnDescription" content="网络安全标准实践指南"/>
+<meta name="ColumnKeywords" content="网络安全标准实践指南"/>
+<meta name="ColumnType" content="网络安全标准实践指南"/>
+
+<meta name="others" content="页面生成时间 2026-09-17 14:03:20" />
+<title>
+			网络安全标准实践指南-全国网络安全标准化技术委员会
+		</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="/tc260/xhtml/css/layui1.css" media="all">
+		<link rel="stylesheet" href="/tc260/xhtml/css/common1.css" media="all">
+		<link rel="stylesheet" href="/tc260/xhtml/css/style1.css" media="all">
+		<script src="/tc260/xhtml/js/layui.js"></script>
+		<script src="/tc260/xhtml/js/jquery.min.js"></script>
+	</head>
+	<body>
+		<div>
+    <!-- top搜索 -->
+    <div class="top">
+        <div class="top-header">
+            <div class="logo">
+                <a href="/tc260/index.shtml"><img src="/tc260/xhtml/images/new/logo.png" /></a>
+            </div>
+            <div class="search">
+					<form name="searchFrom" class="searchForm" action="/tc260/search/search.shtml" method="get" onsubmit="return advsearch()">
+									
+                  <input id="searchword" name="keyword" type="text" autocomplete="off" lay-affix="search" placeholder="请输入您要搜索的内容" class="layui-input search-text">
+                <button type="button" class="layui-btn layui-btn-primary" onclick="javascript:document.searchFrom.submit();">
+                   <img src="/tc260/xhtml/images/new/ssico.png" />
+                </button>
+				</form>
+              <a href="/tc260/cydwsq/cydwsq.shtml" class="link sqcydw"><img src="/tc260/xhtml/images/new/cysqico.png" />申请成员单位</a>
+              <span class="line">|</span>
+                <a href="/tc260-webapp/login" class="link" target="_blank">登录</a>
+            </div>
+        </div>
+    </div>
+    <!-- 导航 -->
+    <div class="layui-bg-064eaf">
+        <ul class="nav">
+            <li class="layui-nav-item"><a href="/tc260/index.shtml">首页</a></li>
+            <li class="layui-nav-item"><a href="/tc260/xwdt1/list.shtml">新闻动态</a></li>
+            <li class="layui-nav-item"><a href="/tc260/hygd1/list.shtml">行业观点</a></li>
+            <li class="layui-nav-item"><a href="/tc260/bzzqyj/yjzj_list.shtml">标准征求意见</a></li>
+
+            <li class="layui-nav-item"><a href="/tc260/sjzn/list.shtml">出版物</a></li>
+            <li class="layui-nav-item"><a href="/tc260/ldsz/list_cont.shtml">关于我们</a></li>
+
+        </ul>
+
+<style>
+
+</style>
+    </div>
+
+</div>
+<script>
+	function advsearch() {
+		var sSearchWord = document.getElementById("searchword").value;
+		var sSearchWordNew = "";
+		sSearchWord = sSearchWord.replace(/(^\s*)|(\s*$)/g, "");
+		if (sSearchWord == '' || sSearchWord == '请输入您要搜索的内容') {
+			alert('关键字不能为空！');
+			return false;
+		} else {
+			var sSearchWords = sSearchWord.split(" ");
+			if (sSearchWords.length > 1) {
+				for (var i = 0; i < sSearchWords.length; i++) {
+					sWord = sSearchWords[i];
+					if (sWord != "") {
+						if (sSearchWordNew != "") {
+							sSearchWordNew += " " + sWord;
+						} else {
+							sSearchWordNew = sWord;
+						}
+					}
+				}
+				document.getElementById("searchword").value = sSearchWordNew;
+			}
+		}
+	}
+</script>
+<script language="javascript" type="text/javascript">
+	$(document).ready(function() {
+		// 获取当前栏目名称
+		var columnName = $('.dqlmName').text().trim();
+		
+		// 如果栏目名称为空或不存在，默认高亮首页
+		if (!columnName) {
+			$('.nav li:first-child').addClass('layui-current');
+			return;
+		}
+		
+		// 遍历顶部导航菜单
+		var matched = false;
+		$('.nav .layui-nav-item').each(function() {
+			var linkText = $(this).find('a').text().trim();
+			// 如果菜单文字与栏目名称匹配
+			if (linkText === columnName) {
+				$(this).addClass('layui-current');
+				matched = true;
+			} else {
+				$(this).removeClass('layui-current');
+			}
+		});
+		
+		// 如果没有匹配到，高亮首页
+		if (!matched) {
+			$('.nav li:first-child').addClass('layui-current');
+		}
+	});
+</script>
+<!-- 内容 -->
+		<!-- 内容 -->
+		<div class="main2">
+			<div class="main-bg">
+				<div class="content2">
+					<div class="cont bg">
+						<!-- 面包屑 -->
+						<ul class="breadcrumbs">
+							<li>
+								<img src="/tc260/xhtml/images/new/wz.png" width="18" />
+<a href='/tc260/index.shtml'  target="_parent">首页</a>&nbsp;/&nbsp;<a href='/tc260/cbw/jump.shtml'  target="_parent">出版物</a>&nbsp;/&nbsp;<span>网络安全标准实践指南</span>
+
+
+							</li>
+
+						</ul>
+
+						<!-- 内容 -->
+						<div class="main-cont">
+							<div class="publication">
+								<div class="left">
+									<ul>
+											<li><a href="/tc260/sjzn/list.shtml"><i></i>
+													网络安全标准实践指南
+												</a></li>
+											<li><a href="/tc260/ztyj/list.shtml"><i></i>
+													网络安全标准化技术研究报告
+												</a></li>
+											<li><a href="/tc260/jswj/list.shtml"><i></i>
+													TC260网安标委技术文件
+												</a></li>
+											<li><a href="/tc260/bps/list.shtml"><i></i>
+													网络安全标准化白皮书
+												</a></li>
+											<li><a href="/tc260/yyzn/list.shtml"><i></i>
+													网络安全标准化专题研究
+												</a></li>
+
+									</ul>
+									<script language="javascript" type="text/javascript">
+										$(document).ready(function() {
+											var currentPath = window.location.pathname;
+											
+											$(".left li").each(function() {
+												var menuHref = $(this).find("a").attr("href");
+												// 去掉菜单链接末尾的文件名，只取目录部分
+												var menuDir = menuHref.substring(0, menuHref.lastIndexOf('/'));
+												
+												// 检查当前路径是否包含该目录
+												if (currentPath.indexOf(menuDir) !== -1) {
+													$(this).addClass("current");
+												} else {
+													$(this).removeClass("current");
+												}
+											});
+										});
+									</script>
+								</div>
+								<div class="right">
+											<div class="item">
+												<a href="/tc260/sjzn/202011/734a77d855054311aed9fb6df2910779/files/bebc1bf9b0a8496180a8a34b372e59cb.pdf" target="_blank" title='TC260-PG-20205A 《网络安全标准实践指南 —移动互联网应用程序（App）使用软件开发工具包（SDK）安全指引》'  >TC260-PG-20205A 《网络安全标准实践指南 —移动互联网应用程序（App）使用软件开发工...</a>
+												<span class="date">
+													2020-11-01
+												</span>
+											</div>
+
+										
+											<div class="item">
+												<a href="/tc260/sjzn/202009/e8e4623c255046c498fa4fcba158222a/files/a3c1e8a7a571469e8e33c66a9701bad3.pdf" target="_blank" title='TC260-PG-20204A 《网络安全标准实践指南 —移动互联网应用程序（App）系统权限申请使用指南》'  >TC260-PG-20204A 《网络安全标准实践指南 —移动互联网应用程序（App）系统权限申请使...</a>
+												<span class="date">
+													2020-09-08
+												</span>
+											</div>
+
+										
+											<div class="item">
+												<a href="/tc260/sjzn/202009/a93683664c32471390da1017d873cfab/files/406b209fee6547288bae81ad12b32655.pdf" target="_blank" title='TC260-PG-20203A 《网络安全标准实践指南 —移动互联网应用程序（App）个人信息保护常见问题及处置指南》'  >TC260-PG-20203A 《网络安全标准实践指南 —移动互联网应用程序（App）个人信息保护常...</a>
+												<span class="date">
+													2020-09-01
+												</span>
+											</div>
+
+										
+											<div class="item">
+												<a href="/tc260/sjzn/202007/fa3f0f7d257c48bf893a6f503b70e06e/files/153c7b28aa2144cda995d6d0ce74cdc4.pdf" target="_blank" title='TC260-PG-20202A 《网络安全标准实践指南 —移动互联网应用程序（App）收集使用个人信息自评估指南》'  >TC260-PG-20202A 《网络安全标准实践指南 —移动互联网应用程序（App）收集使用个人信...</a>
+												<span class="date">
+													2020-07-01
+												</span>
+											</div>
+
+										
+											<div class="item">
+												<a href="/tc260/sjzn/202003/405101c52b584a959fd63c490f7aa6f8/files/012646e3e1ba4620a6b7210d09a3b5ce.pdf" target="_blank" title='TC260-PG-20201A　《网络安全实践指南 —远程办公安全防护》'  >TC260-PG-20201A　《网络安全实践指南 —远程办公安全防护》</a>
+												<span class="date">
+													2020-03-01
+												</span>
+											</div>
+
+										
+											<div class="item">
+												<a href="/tc260/sjzn/201906/001b73015a7f499dadbccf749add6708/files/588d42d52ce24b209acf6cb0c1841b5f.pdf" target="_blank" title='TC260-PG-20191A　《网络安全实践指南 —移动互联网应用基本业务功能必要信息规范》'  >TC260-PG-20191A　《网络安全实践指南 —移动互联网应用基本业务功能必要信息规范》</a>
+												<span class="date">
+													2019-06-01
+												</span>
+											</div>
+
+										
+											<div class="item">
+												<a href="/tc260/sjzn/201805/18432be1af1b4d3daca3bdd8154fbaf0/files/d916c597e61243fc98465041fe0915ca.pdf" target="_blank" title='TC260-PG-20183A　《网络安全实践指南 —欧盟 GDPR 关注点》'  >TC260-PG-20183A　《网络安全实践指南 —欧盟 GDPR 关注点》</a>
+												<span class="date">
+													2018-05-25
+												</span>
+											</div>
+
+										
+											<div class="item">
+												<a href="/tc260/sjzn/201802/0f09c1bfedd14385b83a0d4d2716db9d.shtml" target="_blank" title='TC260-PG-20182A　《网络安全实践指南 —应对截获短信验证码实施网络身 份假冒攻击的技术指引》'  >TC260-PG-20182A　《网络安全实践指南 —应对截获短信验证码实施网络身 份假冒攻击的技...</a>
+												<span class="date">
+													2018-02-11
+												</span>
+											</div>
+
+										
+											<div class="item">
+												<a href="/tc260/sjzn/201801/4642dbc271904c2fabe43887de4afc81/files/230b90edb1b94934920950da3b2c6993.pdf" target="_blank" title='TC260-PG-20181A　《网络安全实践指南 —CPU 熔断和幽灵漏洞防范指引》'  >TC260-PG-20181A　《网络安全实践指南 —CPU 熔断和幽灵漏洞防范指引》</a>
+												<span class="date">
+													2018-01-16
+												</span>
+											</div>
+
+										
+
+										<div class="page_num">
+											<div id="page_div"></div>
+										</div>
+<script type="text/javascript" src="/tc260/xhtml/js/page.js"></script><script>createPageHTML('page_div',5, 5,'list','shtml',49);</script>
+									<script src="/tc260/xhtml/js/page.js"></script>
+									<!-- page -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Bottom -->
+		<div>
+    <!-- 底部 -->
+    <div class="footer">
+        <div class="contact">
+          <p>全国网络安全标准化技术委员会秘书处 版权所有 ©2009-2026</p>
+          <p>地址：中国 北京 安定门东大街一号  中国电子技术标准化研究院</p>
+          <p>联系电话：010-64102730,64102731  传真：010-64102997  邮编：100007</p>
+            <p><a href="https://beian.miit.gov.cn/" target="_blank" style="color: #fff">京ICP备05013730号-14</a></p>
+                <p><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010102004561" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;color: #fff">
+                        <img src="/tc260/xhtml/images/beian.png" style="float:left;">京公网安备11010102004561号
+                    </a>
+                </p>
+        </div>
+    </div>
+
+</div>
+		<div class="dqlmName" style="display: none;">出版物</div>
+		<!-- PHPStat Start -->
+		<!--webbot bot="AdvClassList" mode="0" nodeid="0" type="-5" attr="" classstring="&lt;script language=#enpquot#javascript#enpquot#&gt;var __$nodeid=&lt;NodeId&gt;NodeIdPh&lt;/NodeId&gt;;&lt;/script&gt;" TAG="BODY" PREVIEW="[高级栏目列表]" isshowcode="0" startspan --><!--webbot bot="AdvClassList" endspan i-checksum="0" --><script language="JavaScript" charset="utf-8" src="//yifenxi.ejectu.com/phpstat/count/10000095/10000095.js" ></script>
+		<!-- /PHPStat End -->
+	</body>
+</html>

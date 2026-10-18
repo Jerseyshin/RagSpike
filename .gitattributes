@@ -1,0 +1,13 @@
+# Preserve deterministic text line endings for generated datasets and scripts.
+*.md text eol=lf
+*.json text eol=lf
+*.jsonl text eol=lf
+*.py text eol=lf
+
+# Downloaded source artifacts are immutable evidence; do not render noisy diffs.
+data/raw/** -diff
+data/raw-attachments/** -diff
+data/raw-flk/** -diff
+*.pdf binary
+*.doc binary
+*.docx binary

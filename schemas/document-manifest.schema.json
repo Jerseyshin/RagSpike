@@ -1,0 +1,274 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ragspike.local/schemas/document-manifest.schema.json",
+  "title": "中国大陆隐私与数据合规文档清单条目",
+  "description": "描述进入候选语料库的一份官方法规、规章、标准或监管材料。每个 JSON 对象对应一个明确版本。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "document_id",
+    "title",
+    "document_type",
+    "issuing_authorities",
+    "jurisdiction",
+    "topics",
+    "priority",
+    "collection_status",
+    "validity_status",
+    "legal_effect",
+    "scope_mode",
+    "official_urls",
+    "source_domain",
+    "access_level",
+    "language",
+    "inclusion_reason",
+    "review_status"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "document_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "description": "仓库内稳定、不可复用的版本级文档标识。"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "short_title": {
+      "type": ["string", "null"]
+    },
+    "document_number": {
+      "type": ["string", "null"],
+      "description": "主席令、国务院令、部门令、公告或标准编号。"
+    },
+    "document_type": {
+      "enum": [
+        "law",
+        "administrative_regulation",
+        "department_rule",
+        "normative_document",
+        "judicial_interpretation",
+        "mandatory_national_standard",
+        "recommended_national_standard",
+        "local_standard",
+        "industry_standard",
+        "group_standard",
+        "technical_document",
+        "draft_document",
+        "policy_document",
+        "regulatory_guidance"
+      ]
+    },
+    "issuing_authorities": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "jurisdiction": {
+      "const": "CN"
+    },
+    "topics": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "personal_information",
+          "sensitive_personal_information",
+          "data_security",
+          "cybersecurity",
+          "cross_border_data",
+          "children_and_minors",
+          "critical_information_infrastructure",
+          "automated_decision_making",
+          "compliance_audit",
+          "security_assessment",
+          "incident_response",
+          "data_classification",
+          "consumer_and_platform",
+          "general_civil_rights",
+          "app_governance",
+          "permissions",
+          "preinstalled_apps",
+          "software_sdk",
+          "advertising",
+          "algorithm_governance",
+          "content_governance",
+          "facial_recognition",
+          "finance",
+          "automotive",
+          "live_streaming",
+          "standards_testing"
+        ]
+      }
+    },
+    "priority": {
+      "enum": ["P0", "P1", "P2"],
+      "description": "P0 为首批核心语料，P1 为扩展语料，P2 为边界和专项语料。"
+    },
+    "collection_status": {
+      "enum": [
+        "candidate",
+        "source_verified",
+        "downloaded",
+        "normalized",
+        "excluded"
+      ]
+    },
+    "publication_date": {
+      "type": ["string", "null"],
+      "format": "date"
+    },
+    "effective_date": {
+      "type": ["string", "null"],
+      "format": "date"
+    },
+    "expiration_date": {
+      "type": ["string", "null"],
+      "format": "date"
+    },
+    "validity_status": {
+      "enum": ["current", "future", "superseded", "historical", "draft", "repealed", "amended", "unknown"]
+    },
+    "legal_effect": {
+      "enum": ["binding", "mandatory", "recommended", "guidance", "draft_only", "unknown"]
+    },
+    "version_label": {
+      "type": ["string", "null"]
+    },
+    "scope_mode": {
+      "enum": ["full_document", "selected_articles"]
+    },
+    "selected_sections": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "scope_note": {
+      "type": ["string", "null"]
+    },
+    "official_urls": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "format": "uri",
+        "pattern": "^https://"
+      }
+    },
+    "source_domain": {
+      "type": "string",
+      "minLength": 1,
+      "description": "官方来源域名，不包含协议和路径。"
+    },
+    "retrieved_at": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "content_sha256": {
+      "type": ["string", "null"],
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "supersedes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      }
+    },
+    "replaced_by": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      }
+    },
+    "related_documents": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      }
+    },
+    "access_level": {
+      "const": "public"
+    },
+    "language": {
+      "const": "zh-CN"
+    },
+    "inclusion_reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "exclusion_reason": {
+      "type": ["string", "null"]
+    },
+    "review_status": {
+      "enum": ["pending", "approved", "rejected"]
+    },
+    "reviewed_by": {
+      "type": ["string", "null"]
+    },
+    "reviewed_at": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "notes": {
+      "type": ["string", "null"]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "scope_mode": {
+            "const": "selected_articles"
+          }
+        },
+        "required": ["scope_mode"]
+      },
+      "then": {
+        "required": ["selected_sections"],
+        "properties": {
+          "selected_sections": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "collection_status": {
+            "const": "excluded"
+          }
+        },
+        "required": ["collection_status"]
+      },
+      "then": {
+        "required": ["exclusion_reason"],
+        "properties": {
+          "exclusion_reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  ]
+}

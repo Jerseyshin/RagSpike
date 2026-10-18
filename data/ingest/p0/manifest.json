@@ -1,0 +1,34 @@
+{
+  "canonical_trial_input": "data/ingest/p0/records.jsonl",
+  "corpus_id": "cn-privacy-p0-v0.1",
+  "document_count": 11,
+  "document_ids": [
+    "cn-pipl-2021",
+    "cn-data-security-law-2021",
+    "cn-cybersecurity-law-2025",
+    "cn-civil-code-2020-privacy-sections",
+    "cn-network-data-regulation-2024",
+    "cn-data-export-security-assessment-measures-2022",
+    "cn-pi-export-standard-contract-measures-2023",
+    "cn-cross-border-data-flow-provisions-2024",
+    "cn-pi-compliance-audit-measures-2025",
+    "cn-app-illegal-pi-identification-method-2019",
+    "cn-app-necessary-pi-scope-provisions-2021"
+  ],
+  "documents_path": "data/ingest/p0/documents.jsonl",
+  "documents_sha256": "c4a96316513e25fc4af8ae0825be8f8b492a167a5a47cebaa7f1bdbe3a995400",
+  "explicitly_excluded": [
+    "data/evaluation/",
+    "data/downloads/",
+    "data/raw/",
+    "data/raw-attachments/",
+    "11 restricted or broken-link documents without approved body text"
+  ],
+  "input_policy": "Use identical fixed records for LightRAG and vector-RAG comparison; documents.jsonl is retained for source reconstruction and API adaptation.",
+  "purpose": "LightRAG and vector-RAG P0 pipeline trial",
+  "record_count": 571,
+  "records_path": "data/ingest/p0/records.jsonl",
+  "records_sha256": "160e3acc42c589bb418b37411092644440ae909332a8cc879421412f33cece7c",
+  "schema_version": "1.0",
+  "status": "ready_for_pipeline_trial"
+}
